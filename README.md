@@ -32,25 +32,30 @@ These points will be attributed manually if you do not manage to have your contr
 - Create a contract (ExerciceSolution) that can claim tokens from teacher ERC20. Keep track of addresses who claimed token, and how much in ExerciceSolution.
 - Deploy ExerciceSolution and submit it to the evaluator with  `submitExercice()` (1 pts)
 - Call `ex2_claimedFromContract` in the evaluator to prove your code work (2 pts)
-- Create a function in ExerciceSolution to transfer tokens from the ExerciceSolution to the address that initially claimed them (2 pts)
+- Create a function `withdrawTokens()` in ExerciceSolution to withdraw the claimableTokens from the ExerciceSolution to the address that initially claimed them 
+- Call `ex3_withdrawFromContract` in the evaluator to prove your code work (2 pts)
 
 ### Approve and transferFrom
-- Use approve() function to allow your contract to manipulate your tokens (1 pts) and revoke this authorization (1 pts)
-- Create a function to deposit tokens in DepositorContract using transferFrom on teacher ERC20 (2 pts)
+- Use ERC20 function to allow your contract to manipulate your tokens. Call `ex4_approvedExerciceSolution()` to claim points (1 pts) 
+- Use ERC20 to revoke this authorization. Call `ex5_revokedExerciceSolution()` to claim points (1 pts)
+- Create a function `depositTokens()` through which a user can deposit claimableTokens in ExerciceSolution, using transferFrom  
+- Call `ex6_depositTokens` in the evaluator to prove your code work (2 pts)
 
 ### Tracking user deposits with a deposit wrapper ERC20
-- Create and deploy an ERC20 (DepositorToken)to track user deposit. This ERC20 should be mintable and mint autorization given to DepositorContract (2 pts)
-- Update the deposit function so that user balance is tokenized. When a deposit is made in DepositorContract, tokens are minted in DepositorToken and transfered to the address depositing. The deposit can be claimed by sending DepositorToken back to DepositorContract, who then burns them (2 pts)
-- Publish the code of at least one of your deployed contracts on Etherscan using the "Verify and publish" functionnality (2 pts)
+- Create and deploy an ERC20 (ExerciceSolutionToken) to track user deposit. This ERC20 should be mintable and mint autorization given to ExerciceSolution. 
+- Call `ex7_createERC20` in the evaluator to prove your code work (2 pts)
+- Update the deposit function so that user balance is tokenized. When a deposit is made in ExerciceSolution, tokens are minted in ExerciceSolutionToken and transfered to the address depositing. 
+- Update the ExerciceSolution withdraw function so that it uses transferFrom() ExerciceSolutionToken, burns these tokens, and returns the claimable tokens(2 pts)
 
 ### Extra points
 Extra points if you find bugs / corrections this TD can benefit from, and submit a PR to make it better.  Ideas:
 - Adding a way to check the code of a specific contract was only used once (no copying) 
+- Publish the code of at least one of your deployed contracts on Etherscan using the "Verify and publish" functionnality 
 
 ## TD addresses
-- TDToken `0x827a4EEa47D1A17Cd01fDB5603fE26388D52f114`
-- ClaimableToken `0x677F471d312Cc67562c32B08211bC1cafc542AA1`
-- Evaluator `0xb2b5f7791258Acc02a9Cf63da45AcF5BAa902451`
+- TDToken `0x84f8A61479BC777d639Ff818e7f4958163F2e32B`
+- ClaimableToken `0x72c19A5eFd41d16E1fc7B6c0CB38C05EE76F7cF8`
+- Evaluator `0x20a75cAcf97c018a03222f5f0049De8Cb9Af781a`
 
 ## Installing
 > npm install @openzeppelin/contracts

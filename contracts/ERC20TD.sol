@@ -5,7 +5,7 @@ contract ERC20TD is ERC20 {
 
 mapping(address => bool) public teachers;
 event DenyTransfer(address recipient, uint256 amount);
-event DenyTransferFrom(address recipient, uint256 amount);
+event DenyTransferFrom(address sender, address recipient, uint256 amount);
 
 constructor(string memory name, string memory symbol,uint256 initialSupply) public ERC20(name, symbol) {
         _mint(msg.sender, initialSupply);
