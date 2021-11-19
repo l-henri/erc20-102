@@ -1,4 +1,4 @@
-# ERC20 101
+# ERC20 102
 
 ## Introduction
 Welcome! This is an automated workshop that will dive deeper into managing ERC20 tokens. Specifically we will look at patterns using approve() and transferFrom().
