@@ -18,6 +18,19 @@ Your objective is to gather as many TD-ERC20-102 points as possible. Please note
 - The Evaluator contract sometimes needs to make payments to buy your tokens. Make sure he has enough ETH to do so! If not, you can send ETH directly to the contract.
 - You can use different contracts to validate different exercices. In order to update the evaluated exercice, call `submitExercice()` in the Evaluator contract.
 
+### Getting to work
+- Clone the repo on your machine
+- Install the required packages `npm install @openzeppelin/contracts@3.4.1` and `npm install @truffle/hdwallet-provider`
+- Copy the content of `example-truffle-config.js` to your truffle config
+- Configure a seed for deployment of contracts in your truffle config
+- Register for an infura key and set it up in your truffle config
+- Download and launch Ganache
+- Test that you are able to connect to the rinkeby network with `truffle console`
+- Test that you are able to connect to the rinkeby network with `truffle console --network rinkeby`
+- To deploy a contract, configure a migration in the [migration folder](migrations). Look at the way the TD is deploy and try to iterate
+- Test your deployment in Ganache `truffle migrate`
+- Deploy on Rinkeby `truffle migrate --network rinkeby --skip-dry-run`
+
 ## Points list
 ### Setting up
 - Create a git repository and share it with the teacher
@@ -58,8 +71,3 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 - TDToken `0x932Af55Fb59E0A53624Db60E454b54a6B33Ed72a`
 - ClaimableToken `0x21c8ECC39E1b488f58F2086b64BBa1BB2f1523FE`
 - Evaluator `0xB5136aa7176F569b064F7681f71deDFce9d06C03`
-
-## Installing
-> npm install @openzeppelin/contracts@3.4.1
-
-> npm install @truffle/hdwallet-provider
