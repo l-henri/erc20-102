@@ -1,0 +1,399 @@
+{
+  "contractName": "IExerciceSolution",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "claimTokensOnBehalf",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "callerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "tokensInCustody",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"claimTokensOnBehalf\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"callerAddress\",\"type\":\"address\"}],\"name\":\"tokensInCustody\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/henrilieutaud/Documents/Mes documents/ESILV/03 Blockchain Programmation/erc20-102/contracts/IExerciceSolution.sol\":\"IExerciceSolution\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/henrilieutaud/Documents/Mes documents/ESILV/03 Blockchain Programmation/erc20-102/contracts/IExerciceSolution.sol\":{\"keccak256\":\"0x9d7a6d6840227a25a46a3d24d8d1a122c40a4dc608c9fa5fefbc5e808c013027\",\"urls\":[\"bzz-raw://1ad7f241aa0080146276038716cac9985021d704407e57c762887c10aa412770\",\"dweb:/ipfs/QmW5vN8xU571385v1nbiciP6xppxxXxtf96eLzKsmWhGy3\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\ninterface IExerciceSolution \n{\n\n\tfunction claimTokensOnBehalf() external;\n\n\tfunction tokensInCustody(address callerAddress) external returns (uint256);\n\n}\n",
+  "sourcePath": "/Users/henrilieutaud/Documents/Mes documents/ESILV/03 Blockchain Programmation/erc20-102/contracts/IExerciceSolution.sol",
+  "ast": {
+    "absolutePath": "/Users/henrilieutaud/Documents/Mes documents/ESILV/03 Blockchain Programmation/erc20-102/contracts/IExerciceSolution.sol",
+    "exportedSymbols": {
+      "IExerciceSolution": [
+        582
+      ]
+    },
+    "id": 583,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 571,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 582,
+        "linearizedBaseContracts": [
+          582
+        ],
+        "name": "IExerciceSolution",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "0e4f7f36",
+            "id": 574,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimTokensOnBehalf",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 572,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "86:2:3"
+            },
+            "returnParameters": {
+              "id": 573,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "97:0:3"
+            },
+            "scope": 582,
+            "src": "58:40:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "0776d118",
+            "id": 581,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensInCustody",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 577,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 576,
+                  "name": "callerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 581,
+                  "src": "126:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 575,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "126:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "125:23:3"
+            },
+            "returnParameters": {
+              "id": 580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 579,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 581,
+                  "src": "167:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 578,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "167:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "166:9:3"
+            },
+            "scope": 582,
+            "src": "101:75:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 583,
+        "src": "25:154:3"
+      }
+    ],
+    "src": "0:180:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/henrilieutaud/Documents/Mes documents/ESILV/03 Blockchain Programmation/erc20-102/contracts/IExerciceSolution.sol",
+      "exportedSymbols": {
+        "IExerciceSolution": [
+          582
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 571,
+        "name": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            582
+          ],
+          "name": "IExerciceSolution",
+          "scope": 583
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "0e4f7f36",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "claimTokensOnBehalf",
+              "overrides": null,
+              "scope": 582,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 572,
+                "name": "ParameterList",
+                "src": "86:2:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 573,
+                "name": "ParameterList",
+                "src": "97:0:3"
+              }
+            ],
+            "id": 574,
+            "name": "FunctionDefinition",
+            "src": "58:40:3"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "0776d118",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "tokensInCustody",
+              "overrides": null,
+              "scope": 582,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "callerAddress",
+                      "overrides": null,
+                      "scope": 581,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 575,
+                        "name": "ElementaryTypeName",
+                        "src": "126:7:3"
+                      }
+                    ],
+                    "id": 576,
+                    "name": "VariableDeclaration",
+                    "src": "126:21:3"
+                  }
+                ],
+                "id": 577,
+                "name": "ParameterList",
+                "src": "125:23:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 581,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 578,
+                        "name": "ElementaryTypeName",
+                        "src": "167:7:3"
+                      }
+                    ],
+                    "id": 579,
+                    "name": "VariableDeclaration",
+                    "src": "167:7:3"
+                  }
+                ],
+                "id": 580,
+                "name": "ParameterList",
+                "src": "166:9:3"
+              }
+            ],
+            "id": 581,
+            "name": "FunctionDefinition",
+            "src": "101:75:3"
+          }
+        ],
+        "id": 582,
+        "name": "ContractDefinition",
+        "src": "25:154:3"
+      }
+    ],
+    "id": 583,
+    "name": "SourceUnit",
+    "src": "0:180:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-11-19T10:12:35.327Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
