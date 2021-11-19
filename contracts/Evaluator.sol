@@ -233,7 +233,10 @@ contract Evaluator
 		// Checking how many tokens ExerciceSolution and Evaluator hold
 		uint256 solutionInitBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
 		uint256 selfInitBalance = claimableERC20.balanceOf(address(this));
-		uint256 amountDeposited = studentExerciceSolution[msg.sender].tokensInCustody(address(this));
+		address exerciceSolutionERC20 = studentExerciceSolution[msg.sender].getERC20DepositAddress();
+		IERC20Mintable ExerciceSolutionERC20 = IERC20Mintable(exerciceSolutionERC20);
+		uint256 amountDeposited = ExerciceSolutionERC20.balanceOf(address(this));
+		uint256 initWrappedTotalSupply = ExerciceSolutionERC20.totalSupply();
 		require(selfInitBalance>= amountToDeposit, "Evaluator does not hold enough tokens");
 
 		// Approve student solution to manipulate our tokens
@@ -245,17 +248,54 @@ contract Evaluator
 		// Check balances are correct
 		uint256 solutionEndBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
 		uint256 selfEndBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
-		uint256 amountLeft = studentExerciceSolution[msg.sender].tokensInCustody(address(this));
+		uint256 amountLeft = ExerciceSolutionERC20.balanceOf(address(this));
+		uint256 endWrappedTotalSupply = ExerciceSolutionERC20.totalSupply();
 
 		require(solutionEndBalance - solutionInitBalance == amountToDeposit, "ExerciceSolution has an incorrect amount of tokens");
 		require(selfInitBalance - selfEndBalance == amountToDeposit, "Evaluator has an incorrect amount of tokens");
-		require(amountLeft - amountDeposited == amountToDeposit, "Balance of Evaluator not credited correctly in ExerciceSolution");
-
+		require(amountLeft - amountDeposited == amountToDeposit, "Balance of Evaluator not credited correctly in ExerciceSolutionErc20");
+		require(endWrappedTotalSupply - initWrappedTotalSupply == amountToDeposit, "ExerciceSolutionErc20 were not minted correctly");
 
 		// Crediting points
 		if (!exerciceProgression[msg.sender][8])
 		{
 			exerciceProgression[msg.sender][8] = true;
+			TDERC20.distributeTokens(msg.sender, 2);
+		}
+	}
+
+	function ex9_withdrawAndBurn()
+	public
+	{
+		// Checking a solution was submitted
+		require(exerciceProgression[msg.sender][0], "No solution submitted");
+
+		// Checking how many tokens ExerciceSolution and Evaluator hold
+		uint256 solutionInitBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
+		uint256 selfInitBalance = claimableERC20.balanceOf(address(this));
+		address exerciceSolutionERC20 = studentExerciceSolution[msg.sender].getERC20DepositAddress();
+		IERC20Mintable ExerciceSolutionERC20 = IERC20Mintable(exerciceSolutionERC20);
+		uint256 amountToWithdraw = ExerciceSolutionERC20.balanceOf(address(this));
+		uint256 initWrappedTotalSupply = ExerciceSolutionERC20.totalSupply();
+
+		// Withdraw tokens through ExerciceSolution
+		studentExerciceSolution[msg.sender].withdrawTokens(amountToWithdraw);
+
+		// Verifying tokens where withdrew correctly
+		uint256 solutionEndBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
+		uint256 selfEndBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
+		uint256 amountLeft = ExerciceSolutionERC20.balanceOf(address(this));
+		uint256 endWrappedTotalSupply = ExerciceSolutionERC20.totalSupply();
+
+		require(solutionInitBalance - solutionEndBalance== amountToWithdraw, "ExerciceSolution has an incorrect amount of tokens");
+		require(selfEndBalance - selfInitBalance == amountToWithdraw, "Evaluator has an incorrect amount of tokens");
+		require(amountLeft == 0, "Tokens still credited ExerciceSolutionErc20");
+		require(initWrappedTotalSupply - endWrappedTotalSupply == amountToWithdraw, "ExerciceSolutionErc20 were not burned correctly");
+
+		// Crediting points
+		if (!exerciceProgression[msg.sender][9])
+		{
+			exerciceProgression[msg.sender][9] = true;
 			TDERC20.distributeTokens(msg.sender, 2);
 		}
 	}

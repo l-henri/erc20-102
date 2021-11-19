@@ -45,7 +45,9 @@ These points will be attributed manually if you do not manage to have your contr
 - Create and deploy an ERC20 (ExerciceSolutionToken) to track user deposit. This ERC20 should be mintable and mint autorization given to ExerciceSolution. 
 - Call `ex7_createERC20` in the evaluator to prove your code work (2 pts)
 - Update the deposit function so that user balance is tokenized. When a deposit is made in ExerciceSolution, tokens are minted in ExerciceSolutionToken and transfered to the address depositing. 
-- Update the ExerciceSolution withdraw function so that it uses transferFrom() ExerciceSolutionToken, burns these tokens, and returns the claimable tokens(2 pts)
+- Call `ex8_depositAndMint` in the evaluator to prove your code work (2 pts)
+- Update the ExerciceSolution withdraw function so that it uses transferFrom() ExerciceSolutionToken, burns these tokens, and returns the claimable tokens 
+- Call `ex9_withdrawAndBurn` in the evaluator to prove your code work (2 pts)
 
 ### Extra points
 Extra points if you find bugs / corrections this TD can benefit from, and submit a PR to make it better.  Ideas:
@@ -53,9 +55,9 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 - Publish the code of at least one of your deployed contracts on Etherscan using the "Verify and publish" functionnality 
 
 ## TD addresses
-- TDToken `0x84f8A61479BC777d639Ff818e7f4958163F2e32B`
-- ClaimableToken `0x72c19A5eFd41d16E1fc7B6c0CB38C05EE76F7cF8`
-- Evaluator `0x20a75cAcf97c018a03222f5f0049De8Cb9Af781a`
+- TDToken `0x932Af55Fb59E0A53624Db60E454b54a6B33Ed72a`
+- ClaimableToken `0x21c8ECC39E1b488f58F2086b64BBa1BB2f1523FE`
+- Evaluator `0xB5136aa7176F569b064F7681f71deDFce9d06C03`
 
 ## Installing
 > npm install @openzeppelin/contracts@3.4.1
