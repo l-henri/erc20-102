@@ -52,7 +52,7 @@ These points will be attributed manually if you do not manage to have your contr
 ### Extra points
 Extra points if you find bugs / corrections this TD can benefit from, and submit a PR to make it better.  Ideas:
 - Adding a way to check the code of a specific contract was only used once (no copying) 
-- Publish the code of at least one of your deployed contracts on Etherscan using the "Verify and publish" functionnality 
+- Publish the code of the Evaluator on Etherscan using the "Verify and publish" functionnality 
 
 ## TD addresses
 - TDToken `0x932Af55Fb59E0A53624Db60E454b54a6B33Ed72a`
