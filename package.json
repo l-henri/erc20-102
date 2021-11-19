@@ -246,7 +246,7 @@
       "resolved": "https://registry.npmjs.org/@ethereumjs/tx/-/tx-3.4.0.tgz",
       "version": "3.4.0"
     },
-    "@openzeppelin/contracts": "^4.3.3",
+    "@openzeppelin/contracts": "^3.4.1",
     "@supercharge/strings": {
       "dependencies": {
         "uuid": {

@@ -222,6 +222,45 @@ contract Evaluator
 		}
 	}
 
+	function ex8_depositAndMint()
+	public
+	{
+		// Checking a solution was submitted
+		require(exerciceProgression[msg.sender][0], "No solution submitted");
+
+		uint256 amountToDeposit = 100;
+
+		// Checking how many tokens ExerciceSolution and Evaluator hold
+		uint256 solutionInitBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
+		uint256 selfInitBalance = claimableERC20.balanceOf(address(this));
+		uint256 amountDeposited = studentExerciceSolution[msg.sender].tokensInCustody(address(this));
+		require(selfInitBalance>= amountToDeposit, "Evaluator does not hold enough tokens");
+
+		// Approve student solution to manipulate our tokens
+		claimableERC20.increaseAllowance(address(studentExerciceSolution[msg.sender]), amountToDeposit);
+
+		// Deposit tokens in student contract
+		studentExerciceSolution[msg.sender].depositTokens(amountToDeposit);
+
+		// Check balances are correct
+		uint256 solutionEndBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
+		uint256 selfEndBalance = claimableERC20.balanceOf(address(studentExerciceSolution[msg.sender]));
+		uint256 amountLeft = studentExerciceSolution[msg.sender].tokensInCustody(address(this));
+
+		require(solutionEndBalance - solutionInitBalance == amountToDeposit, "ExerciceSolution has an incorrect amount of tokens");
+		require(selfInitBalance - selfEndBalance == amountToDeposit, "Evaluator has an incorrect amount of tokens");
+		require(amountLeft - amountDeposited == amountToDeposit, "Balance of Evaluator not credited correctly in ExerciceSolution");
+
+
+		// Crediting points
+		if (!exerciceProgression[msg.sender][8])
+		{
+			exerciceProgression[msg.sender][8] = true;
+			TDERC20.distributeTokens(msg.sender, 2);
+		}
+	}
+
+
 	/* Internal functions and modifiers */ 
 	function submitExercice(IExerciceSolution studentExercice)
 	public

@@ -58,6 +58,6 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 - Evaluator `0x20a75cAcf97c018a03222f5f0049De8Cb9Af781a`
 
 ## Installing
-> npm install @openzeppelin/contracts
+> npm install @openzeppelin/contracts@3.4.1
 
 > npm install @truffle/hdwallet-provider
