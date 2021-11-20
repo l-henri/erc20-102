@@ -68,6 +68,6 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 - Publish the code of the Evaluator on Etherscan using the "Verify and publish" functionnality 
 
 ## TD addresses
-- TDToken `0x941558531B6e610E98bEeA1871e89F9554549e20`
-- ClaimableToken `0xB27D1077A6c63500CCC0ACce75E05A5EDbB56230`
-- Evaluator `0x050D96b5E4d0D8E8eF652dA39D8C4de8EE2b07D7`
+- TDToken `0x77dAe18835b08A75490619DF90a3Fa5f4120bB2E`
+- ClaimableToken `0xb5d82FEE98d62cb7Bc76eabAd5879fa4b29fFE94`
+- Evaluator `0x384C00Ff43Ed5376F2d7ee814677a15f3e330705`
