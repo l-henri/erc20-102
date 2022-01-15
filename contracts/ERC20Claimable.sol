@@ -9,9 +9,10 @@ contract ERC20Claimable is ERC20 {
 	   _mint(msg.sender, initialSupply);
 	}
 
-	function claimTokens() public
+	function claimTokens() public returns (uint256)
 	{
 	  _mint(msg.sender, distributedAmount);
+	  return distributedAmount;
 	}
 
 }
