@@ -40,13 +40,20 @@ module.exports = {
 
   networks: {
 
-    rinkeby: {
+    goerli: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/" + infuraApiKey)
+        return new HDWalletProvider(mnemonic, "https://goerli.infura.io/v3/" + infuraApiKey)
       },
-      network_id: 4,
+      network_id: 5,
       networkCheckTimeout: 30000
+    },
+        //
+    ganache: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 7545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
     }
+
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
