@@ -25,11 +25,11 @@ Your objective is to gather as many TD-ERC20-102 points as possible. Please note
 - Configure a seed for deployment of contracts in your truffle config
 - Register for an infura key and set it up in your truffle config
 - Download and launch Ganache
-- Test that you are able to connect to the rinkeby network with `truffle console`
-- Test that you are able to connect to the rinkeby network with `truffle console --network rinkeby`
+- Test that you are able to connect to the goerli network with `truffle console`
+- Test that you are able to connect to the goerli network with `truffle console --network goerli`
 - To deploy a contract, configure a migration in the [migration folder](migrations). Look at the way the TD is deploy and try to iterate
 - Test your deployment in Ganache `truffle migrate`
-- Deploy on Rinkeby `truffle migrate --network rinkeby --skip-dry-run`
+- Deploy on goerli `truffle migrate --network goerli --skip-dry-run`
 
 ## Points list
 ### Setting up
@@ -68,6 +68,7 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 - Publish the code of the Evaluator on Etherscan using the "Verify and publish" functionnality 
 
 ## TD addresses
-- TDToken `0xccCf36429190773Fd604a808Cb03f682136B007e`
-- ClaimableToken `0x754a4F8D05f9A4157C355d42E8334999Ea5d66c9`
-- Evaluator `0x1987D516D14eBf3025069504b1aD2257516C426a`
+- TDToken `0xb79a94500EE323f15d76fF963CcE27cA3C9e32DF`
+- ClaimableToken `0xE70AE39bDaB3c3Df5225E03032D31301E2E71B6b`
+- Evaluator `0x16F3F705825294A55d40D3D34BAF9F91722d6143`
+
