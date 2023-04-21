@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
 import "./IExerciceSolution.sol";
 import "./ERC20Claimable.sol";
 
@@ -8,7 +9,6 @@ contract ExerciceSolution is IExerciceSolution
 	mapping(address => uint256) public balance;
 
 	constructor(ERC20Claimable _claimableERC20) 
-	public 
 	{
 		claimableERC20 = _claimableERC20;
 	}
